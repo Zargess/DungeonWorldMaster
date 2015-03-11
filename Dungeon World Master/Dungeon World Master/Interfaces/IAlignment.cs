@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Dungeon_World_Master.Interfaces {
-    public interface ISaveable {
-        void Save();
+    public interface IAlignment {
+        string Name { get; }
+        string Goal { get; }
     }
 }
