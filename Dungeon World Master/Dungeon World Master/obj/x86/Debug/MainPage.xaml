@@ -8,6 +8,7 @@
     xmlns:common="using:Dungeon_World_Master.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Dungeon_World_Master.CustomControls"
     mc:Ignorable="d">
 
     <Page.Resources>
@@ -43,6 +44,8 @@
             <RowDefinition Height="140"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        
+        <controls:HexagonGrid Grid.Row="1" />
 
         <!-- Horizontal scrolling grid -->
         <GridView

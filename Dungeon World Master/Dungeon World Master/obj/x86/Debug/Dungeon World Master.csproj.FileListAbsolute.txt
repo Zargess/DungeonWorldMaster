@@ -30,3 +30,40 @@ C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon
 C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\qualifiers.txt.intermediate
 C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\ProjectArchitectures.txt
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\Dungeon World Master.exe
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\Dungeon World Master.pdb
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\App.xbf
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\MainPage.xbf
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\Dungeon World Master.xr.xml
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\Dungeon World Master.exe
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\Dungeon World Master.pdb
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\resources.pri
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\AppxManifest.xml
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\Dungeon World Master.build.appxrecipe
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\App.g.i.cs
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\App.g.cs
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\MainPage.g.i.cs
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\MainPage.g.cs
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\XamlTypeInfo.g.cs
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\App.xaml
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\MainPage.xaml
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\App.xbf
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\MainPage.xbf
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\XamlSaveStateFile.xml
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\priconfig.xml
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\priconfig.xml.intermediate
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\layout.resfiles
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\layout.resfiles.intermediate
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\resources.resfiles
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\resources.resfiles.intermediate
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\pri.resfiles
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\pri.resfiles.intermediate
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\qualifiers.txt
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\qualifiers.txt.intermediate
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\ProjectArchitectures.txt
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\CustomControls\HexagonGrid.g.i.cs
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\CustomControls\HexagonGrid.g.cs
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\CustomControls\HexagonGrid.xbf
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\CustomControls\HexagonGrid.xaml
+D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\CustomControls\HexagonGrid.xbf

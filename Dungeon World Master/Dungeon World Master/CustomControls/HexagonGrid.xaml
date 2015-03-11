@@ -1,0 +1,22 @@
+﻿<UserControl
+    x:Class="Dungeon_World_Master.CustomControls.HexagonGrid"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Dungeon_World_Master.CustomControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Shapes="using:Dungeon_World_Master.Shapes"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+    
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Canvas Height="161" HorizontalAlignment="Left" Margin="27,78,0,0" Name="canvas1" VerticalAlignment="Top" Width="254">
+            <Shapes:Hexagon Canvas.Left="0" Canvas.Top="0" Height="154" x:Name="hexagon1" Stroke="Black" StrokeThickness="3" Width="188" Fill="Red"  />            
+        </Canvas>
+        <Canvas Height="161" HorizontalAlignment="Left" Margin="170,0,0,0" Name="canvas2" VerticalAlignment="Top" Width="254">
+            <Shapes:Hexagon Canvas.Left="0" Canvas.Top="0" Height="154" x:Name="hexagon2" Stroke="Black" StrokeThickness="3" Width="188" Fill="Red" Tapped="hexagon2_Tapped" IsTapEnabled="True" PointerEntered="hexagon2_PointerEntered" />    
+            <TextBlock Margin="65,70,0,0">Hello world</TextBlock>
+        </Canvas>
+    </Grid>
+</UserControl>
