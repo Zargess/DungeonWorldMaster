@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dungeon_World_Master.Interfaces {
     public interface IStat {
-        string Name { get; set; }
+        string Name { get; }
         int Value { get; set; }
         int Modifier { get; }
     }
