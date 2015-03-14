@@ -9,6 +9,8 @@ namespace Dungeon_World_Master.Models {
     public class Campaign : ICampaign {
         public ICollection<ICharacter> Characters { get; }
 
+        public string Name { get; private set; }
+
         public Campaign() {
             
         }

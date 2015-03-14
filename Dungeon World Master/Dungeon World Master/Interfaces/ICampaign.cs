@@ -7,5 +7,6 @@ using System.Threading.Tasks;
 namespace Dungeon_World_Master.Interfaces {
     public interface ICampaign {
         ICollection<ICharacter> Characters { get; }
+        string Name { get; }
     }
 }
