@@ -1,12 +1,12 @@
-﻿using Dungeon_World_Master.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Dungeon_World_Master.Models {
-    public class Stat : IStat {
+    public class Stat : INotifyPropertyChanged {
         public int Modifier {
             get {
                 if (Value <= 8) return -1;
@@ -17,11 +17,23 @@ namespace Dungeon_World_Master.Models {
             }
         }
         public string Name { get; private set; }
-        public int Value { get; set; }
+        private int _value;
+        public int Value {
+            get {
+                return _value;
+            }
+            set {
+                _value = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("Value"));
+                PropertyChanged(this, new PropertyChangedEventArgs("Modifier"));
+            }
+        }
 
         public Stat(string name, int value) {
             Name = name;
             Value = value;
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

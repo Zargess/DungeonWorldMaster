@@ -2,12 +2,13 @@
 <Roots xmlns="clr-namespace:Microsoft.Xaml.Tools.XamlCompiler.RootLog;assembly=Microsoft.Windows.UI.Xaml.81.Build.Tasks">
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="DefaultViewModel" />
-    <RootPropertyPathName Name="Items" />
+    <RootPropertyPathName Name="Campaigns" />
     <RootPropertyPathName Name="NavigationHelper" />
     <RootPropertyPathName Name="GoBackCommand" />
     <RootPropertyPathName Name="Subtitle" />
-    <RootPropertyPathName Name="Title" />
+    <RootPropertyPathName Name="Name" />
     <RootPropertyPathName Name="ImagePath" />
+    <RootPropertyPathName Name="Title" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application" />
@@ -23,8 +24,6 @@
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
-      <RootMethod Name="GetRow" />
-      <RootMethod Name="SetRow" />
       <RootMethod Name="GetRowSpan" />
       <RootMethod Name="SetRowSpan" />
       <RootMethod Name="GetColumn" />

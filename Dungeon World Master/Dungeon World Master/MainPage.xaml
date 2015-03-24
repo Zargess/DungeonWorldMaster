@@ -13,9 +13,7 @@
 
     <Page.Resources>
         <!-- Collection of items displayed by this page -->
-        <CollectionViewSource
-        x:Name="itemsViewSource"
-        Source="{Binding Items}"/>
+        <CollectionViewSource x:Name="itemsViewSource" Source="{Binding Campaigns}"/>
 
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
         <x:String x:Key="AppName">My Application</x:String>
@@ -45,7 +43,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         
-        <controls:HexagonGrid Grid.Row="1" />
+        <!--<controls:HexagonGrid Grid.Row="1" />-->
 
         <!-- Horizontal scrolling grid -->
         <GridView
@@ -65,7 +63,7 @@
                             <Image Source="{Binding ImagePath}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Title}"/>
                         </Border>
                         <StackPanel VerticalAlignment="Bottom" Background="{ThemeResource ListViewItemOverlayBackgroundThemeBrush}">
-                            <TextBlock Text="{Binding Title}" Foreground="{ThemeResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" Height="60" Margin="15,0,15,0" FontWeight="SemiBold"/>
+                            <TextBlock Text="{Binding Name}" Foreground="{ThemeResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" Height="60" Margin="15,0,15,0" FontWeight="SemiBold"/>
                             <TextBlock Text="{Binding Subtitle}" Foreground="{ThemeResource ListViewItemOverlaySecondaryForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" TextWrapping="NoWrap" Margin="15,0,15,10" FontSize="12"/>
                         </StackPanel>
                     </Grid>
