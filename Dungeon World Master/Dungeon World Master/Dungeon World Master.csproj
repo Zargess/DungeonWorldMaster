@@ -123,13 +123,16 @@
     <Compile Include="CustomControls\HexagonGrid.xaml.cs">
       <DependentUpon>HexagonGrid.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Enums\Defenses.cs" />
+    <Compile Include="Enums\Population.cs" />
+    <Compile Include="Enums\Wealth.cs" />
+    <Compile Include="Interface\ISteading.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Alignment.cs" />
     <Compile Include="Models\Campaign.cs" />
     <Compile Include="Models\Character.cs" />
-    <Compile Include="Models\City.cs" />
     <Compile Include="Models\Dice.cs" />
     <Compile Include="Models\Quest.cs" />
     <Compile Include="Models\Stat.cs" />
