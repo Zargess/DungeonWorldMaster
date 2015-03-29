@@ -9,21 +9,22 @@ namespace Dungeon_World_Master.Models {
     public class Stat : INotifyPropertyChanged {
         public int Modifier {
             get {
-                if (Value <= 8) return -1;
-                if (Value >= 13 && Value <= 15) return 1;
-                if (Value == 16 || Value == 17) return 2;
-                if (Value == 18) return 3;
+                if (Score <= 8) return -1;
+                if (Score >= 13 && Score <= 15) return 1;
+                if (Score == 16 || Score == 17) return 2;
+                if (Score == 18) return 3;
                 return 0;
             }
         }
         public string Name { get; private set; }
-        private int _value;
-        public int Value {
+        private int _score;
+        public int Score {
             get {
-                return _value;
+                return _score;
             }
             set {
-                _value = value;
+                _score = value;
+                if (PropertyChanged == null) return;
                 PropertyChanged(this, new PropertyChangedEventArgs("Value"));
                 PropertyChanged(this, new PropertyChangedEventArgs("Modifier"));
             }
@@ -31,7 +32,7 @@ namespace Dungeon_World_Master.Models {
 
         public Stat(string name, int value) {
             Name = name;
-            Value = value;
+            Score = value;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

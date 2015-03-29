@@ -84,6 +84,7 @@ namespace Dungeon_World_Master.Models {
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void RaisePropertyChanged(string name) {
+            if (PropertyChanged == null) return;
             PropertyChanged(this, new PropertyChangedEventArgs(name));
         }
 

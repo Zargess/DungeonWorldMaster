@@ -1,0 +1,16 @@
+﻿<Page
+    x:Class="Dungeon_World_Master.CharacterPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Dungeon_World_Master"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Dungeon_World_Master.CustomControls"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Grid>
+            <controls:StatsTable DataContext="{Binding}" />
+        </Grid>
+    </Grid>
+</Page>

@@ -86,5 +86,9 @@ namespace Dungeon_World_Master {
         private void Add_New_Campaign(object sender, RoutedEventArgs e) {
 
         }
+
+        private void itemGridView_Tapped(object sender, TappedRoutedEventArgs e) {
+            this.Frame.Navigate(typeof(CharacterPage));
+        }
     }
 }
