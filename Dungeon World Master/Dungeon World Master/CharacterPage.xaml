@@ -13,14 +13,7 @@
     <Page.Resources>
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
         <x:String x:Key="AppName">Lol</x:String>
-        <Style x:Key="MultilineTextBoxStyle" TargetType="TextBox">
-            <Setter Property="AcceptsReturn" Value="True" />
-            <Setter Property="TextWrapping" Value="Wrap" />
-            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
-            <Setter Property="Width" Value="Auto" />
-            <Setter Property="Background" Value="{ThemeResource AppBarBackgroundThemeBrush}" />
-            <Setter Property="Foreground" Value="White" />
-        </Style>
+        
     </Page.Resources>
 
     <!--
@@ -76,7 +69,7 @@
             </Grid>
 
             <Grid Grid.Column="1">
-                <TextBox Style="{StaticResource MultilineTextBoxStyle}" Text="{Binding Notes}" />
+                <TextBox Style="{StaticResource MultilineTextBoxStyle}" Text="{Binding Notes, Mode=TwoWay}" Margin="5" />
             </Grid>
         </Grid>
     </Grid>

@@ -5,6 +5,15 @@
     xmlns:local="using:Dungeon_World_Master">
     <Application.Resources>
         <x:String x:Key="AppName">Dungeon World Master</x:String>
+        <Style x:Key="MultilineTextBoxStyle" TargetType="TextBox">
+            <Setter Property="AcceptsReturn" Value="True" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+            <Setter Property="Width" Value="Auto" />
+            <Setter Property="Background" Value="{ThemeResource AppBarBackgroundThemeBrush}" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="IsSpellCheckEnabled" Value="True"/>
+        </Style>
     </Application.Resources>
 </Application>
 

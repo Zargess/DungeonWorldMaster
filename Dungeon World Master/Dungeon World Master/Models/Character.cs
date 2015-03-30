@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace Dungeon_World_Master.Models {
             }
             set {
                 _notes = value;
+                Debug.WriteLine(value);
                 RaisePropertyChanged("Notes");
             }
         }
@@ -95,6 +97,7 @@ namespace Dungeon_World_Master.Models {
             Name = "";
             Notes = "Humus \r\n LOL";
             Race = "";
+            PlayerName = "";
             Stats = GeneralFunctions.GenerateStats();
         }
 
@@ -105,8 +108,7 @@ namespace Dungeon_World_Master.Models {
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void RaisePropertyChanged(string name) {
-            if (PropertyChanged == null) return;
-            PropertyChanged(this, new PropertyChangedEventArgs(name));
+            if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs(name));
         }
 
         public override string ToString() {

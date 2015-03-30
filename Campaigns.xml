@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<campaigns>
+
+	<campaign Name="Test">
+		<characters>
+			<character Name="Enkirash" Alignment="Good(Help someone with magic)" Race="Elf" Class="Wizard" PlayerName="Lukas" Level=1 >
+				<stats Str=8 Dex=8 Con=8 Int=8 Wis=8 Cha=8 />
+				<notes>
+					Some notes baby!
+					
+					Hello, world!
+				</notes>
+			</character>
+		</characters>
+	</campaign>
+
+</campaigns>

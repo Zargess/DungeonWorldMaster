@@ -42,6 +42,7 @@ namespace Dungeon_World_Master
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            
         }
 
         /// <summary>
