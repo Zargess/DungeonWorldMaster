@@ -9,7 +9,17 @@ using System.Threading.Tasks;
 
 namespace Dungeon_World_Master.Models {
     public class Character : INotifyPropertyChanged {
-        public ObservableCollection<string> Notes { get; private set; }
+        private string _notes;
+        public string Notes {
+            get {
+                return _notes;
+            }
+            set {
+                _notes = value;
+                RaisePropertyChanged("Notes");
+            }
+        }
+
         public Stat[] Stats { get; private set; }
 
         private string _alignment;
@@ -56,6 +66,17 @@ namespace Dungeon_World_Master.Models {
             }
         }
 
+        private string _playername;
+        public string PlayerName {
+            get {
+                return _playername;
+            }
+            set {
+                _playername = value;
+                RaisePropertyChanged("PlayerName");
+            }
+        }
+
         private string _race;
         public string Race {
             get {
@@ -72,7 +93,7 @@ namespace Dungeon_World_Master.Models {
             Class = "";
             Level = 1;
             Name = "";
-            Notes = new ObservableCollection<string>();
+            Notes = "Humus \r\n LOL";
             Race = "";
             Stats = GeneralFunctions.GenerateStats();
         }
