@@ -13,7 +13,10 @@ namespace Dungeon_World_Master.Models {
 
         public string Name { get; set; }
 
-        public Campaign() {
+        public Campaign(string name) {
+            Name = name;
+            Characters = new ObservableCollection<Character>();
+            Cities = new ObservableCollection<ISteading>();
         }
     }
 }

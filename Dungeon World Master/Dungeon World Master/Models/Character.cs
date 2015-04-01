@@ -8,110 +8,155 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dungeon_World_Master.Models {
-    public class Character : INotifyPropertyChanged {
+namespace Dungeon_World_Master.Models
+{
+    public class Character : INotifyPropertyChanged
+    {
         private string _notes;
-        public string Notes {
-            get {
+        public string Notes
+        {
+            get
+            {
                 return _notes;
             }
-            set {
+            set
+            {
                 _notes = value;
-                Debug.WriteLine(value);
                 RaisePropertyChanged("Notes");
             }
         }
 
-        public Stat[] Stats { get; private set; }
+        private Stat[] _stats;
+        public Stat[] Stats
+        {
+            get
+            {
+                return _stats; ;
+            }
+            set
+            {
+                _stats = value;
+                RaisePropertyChanged("Stats");
+            }
+        }
 
         private string _alignment;
-        public string Alignment {
-            get {
+        public string Alignment
+        {
+            get
+            {
                 return _alignment;
             }
-            set {
+            set
+            {
                 _alignment = value;
                 RaisePropertyChanged("Alignment");
             }
         }
 
         private string _class;
-        public string Class {
-            get {
+        public string Class
+        {
+            get
+            {
                 return _class;
             }
-            set {
+            set
+            {
                 _class = value;
                 RaisePropertyChanged("Class");
             }
         }
 
         private int _level;
-        public int Level {
-            get {
+        public int Level
+        {
+            get
+            {
                 return _level;
             }
-            set {
+            set
+            {
                 _level = value;
                 RaisePropertyChanged("Level");
             }
         }
 
         private string _name;
-        public string Name {
-            get {
+        public string Name
+        {
+            get
+            {
                 return _name;
             }
-            set {
+            set
+            {
                 _name = value;
                 RaisePropertyChanged("Name");
             }
         }
 
         private string _playername;
-        public string PlayerName {
-            get {
+        public string PlayerName
+        {
+            get
+            {
                 return _playername;
             }
-            set {
+            set
+            {
                 _playername = value;
                 RaisePropertyChanged("PlayerName");
             }
         }
 
         private string _race;
-        public string Race {
-            get {
+        public string Race
+        {
+            get
+            {
                 return _race;
             }
-            set {
+            set
+            {
                 _race = value;
                 RaisePropertyChanged("Race");
             }
         }
 
-        public Character() {
+        public Character()
+        {
             Alignment = "";
             Class = "";
             Level = 1;
             Name = "";
-            Notes = "Humus \r\n LOL";
+            Notes = "Humus \r\n LOL \n\n";
             Race = "";
             PlayerName = "";
             Stats = GeneralFunctions.GenerateStats();
         }
 
-        public Character(string path) {
-            // TODO : Load Character from xml file or the like. Do this from GeneralFunctions
+        public Character(string alignment, string Class, int level, string name, string notes, string race, string playername, Stat[] stats)
+        {
+            Alignment = alignment;
+            this.Class = Class;
+            Level = level;
+            Name = name;
+            Notes = notes;
+            Race = race;
+            PlayerName = playername;
+            Stats = stats;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void RaisePropertyChanged(string name) {
+        private void RaisePropertyChanged(string name)
+        {
             if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs(name));
         }
 
-        public override string ToString() {
+        public override string ToString()
+        {
             return Name + " " + Level;
         }
     }

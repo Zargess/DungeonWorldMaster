@@ -17,11 +17,13 @@ using Windows.UI.Xaml.Navigation;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
-namespace Dungeon_World_Master {
+namespace Dungeon_World_Master
+{
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class CharacterPage : Page {
+    public sealed partial class CharacterPage : Page
+    {
 
         private NavigationHelper navigationHelper;
 
@@ -29,20 +31,19 @@ namespace Dungeon_World_Master {
         /// NavigationHelper is used on each page to aid in navigation and 
         /// process lifetime management
         /// </summary>
-        public NavigationHelper NavigationHelper {
+        public NavigationHelper NavigationHelper
+        {
             get { return this.navigationHelper; }
         }
 
 
-        public CharacterPage() {
+        public CharacterPage()
+        {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
-            this.DataContext = new Character() {
-                Name = "Bob",
-                PlayerName = "Lukas"
-            };
+            this.DataContext = App.ViewModel.SelectedCharacter;
         }
 
         /// <summary>
@@ -56,7 +57,8 @@ namespace Dungeon_World_Master {
         /// <see cref="Frame.Navigate(Type, Object)"/> when this page was initially requested and
         /// a dictionary of state preserved by this page during an earlier
         /// session. The state will be null the first time a page is visited.</param>
-        private void navigationHelper_LoadState(object sender, LoadStateEventArgs e) {
+        private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
+        {
         }
 
         /// <summary>
@@ -67,7 +69,8 @@ namespace Dungeon_World_Master {
         /// <param name="sender">The source of the event; typically <see cref="Common.NavigationHelper"/></param>
         /// <param name="e">Event data that provides an empty dictionary to be populated with
         /// serializable state.</param>
-        private void navigationHelper_SaveState(object sender, SaveStateEventArgs e) {
+        private void navigationHelper_SaveState(object sender, SaveStateEventArgs e)
+        {
         }
 
         #region NavigationHelper registration
@@ -81,11 +84,13 @@ namespace Dungeon_World_Master {
         /// The navigation parameter is available in the LoadState method 
         /// in addition to page state preserved during an earlier session.
 
-        protected override void OnNavigatedTo(NavigationEventArgs e) {
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
             navigationHelper.OnNavigatedTo(e);
         }
 
-        protected override void OnNavigatedFrom(NavigationEventArgs e) {
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
             navigationHelper.OnNavigatedFrom(e);
         }
 

@@ -1,4 +1,5 @@
-﻿using Dungeon_World_Master.ViewModels;
+﻿using Dungeon_World_Master.Utility;
+using Dungeon_World_Master.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -50,7 +51,7 @@ namespace Dungeon_World_Master
         /// will be used such as when the application is launched to open a specific file.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs e)
+        protected override async void OnLaunched(LaunchActivatedEventArgs e)
         {
 
 #if DEBUG
@@ -91,6 +92,7 @@ namespace Dungeon_World_Master
             }
             // Ensure the current window is active
             Window.Current.Activate();
+            await StorageManager.LoadAsync();
         }
 
         /// <summary>
@@ -110,10 +112,11 @@ namespace Dungeon_World_Master
         /// </summary>
         /// <param name="sender">The source of the suspend request.</param>
         /// <param name="e">Details about the suspend request.</param>
-        private void OnSuspending(object sender, SuspendingEventArgs e)
+        private async void OnSuspending(object sender, SuspendingEventArgs e)
         {
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
+            await StorageManager.SaveAsync();
             deferral.Complete();
         }
     }

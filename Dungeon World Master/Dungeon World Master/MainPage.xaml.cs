@@ -1,4 +1,5 @@
 ﻿using Dungeon_World_Master.Common;
+using Dungeon_World_Master.Utility;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -88,6 +89,7 @@ namespace Dungeon_World_Master {
         }
 
         private void itemGridView_Tapped(object sender, TappedRoutedEventArgs e) {
+            App.ViewModel.SelectedCharacter = App.ViewModel.Campaigns[0].Characters[0];
             this.Frame.Navigate(typeof(CharacterPage));
         }
     }

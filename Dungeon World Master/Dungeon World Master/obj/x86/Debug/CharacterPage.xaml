@@ -15,6 +15,7 @@
         <x:String x:Key="AppName">Lol</x:String>
         
     </Page.Resources>
+    
 
     <!--
         This grid acts as a root panel for the page that defines two rows:

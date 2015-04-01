@@ -1,21 +1,44 @@
 ﻿using Dungeon_World_Master.Models;
+using Dungeon_World_Master.Utility;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dungeon_World_Master.ViewModels {
-    public class ViewModel {
+namespace Dungeon_World_Master.ViewModels
+{
+    public class ViewModel : INotifyPropertyChanged
+    {
         public ObservableCollection<Campaign> Campaigns { get; private set; }
 
-        public ViewModel() {
-            Campaigns = new ObservableCollection<Campaign>() {
-                new Campaign {
-                    Name = "Test"
-                }
-            };
+        private Character _selectedCharacter;
+        public Character SelectedCharacter
+        {
+            get
+            {
+                return _selectedCharacter;
+            }
+            set
+            {
+                _selectedCharacter = value;
+                RaisePropertyChanged("SelectedCharacter");
+            }
+        }
+
+        public ViewModel()
+        {
+            Campaigns = new ObservableCollection<Campaign>();
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void RaisePropertyChanged(string name)
+        {
+            if (PropertyChanged == null) return;
+            PropertyChanged(this, new PropertyChangedEventArgs(name));
         }
     }
 }
