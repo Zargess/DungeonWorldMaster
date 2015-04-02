@@ -51,9 +51,10 @@ namespace Dungeon_World_Master.Utility
                     var Class = attributes[3];
                     var playername = attributes[4];
                     var level = Int32.Parse(attributes[5]);
+                    var looks = attributes[6];
                     var stats = CreateStatsFromXml(character.ChildNodes[0]);
                     var notes = character.ChildNodes[1].InnerText;
-                    c.Characters.Add(new Character(alignment, Class, level, name, notes, race, playername, stats));
+                    c.Characters.Add(new Character(alignment, Class, level, name, notes, race, playername, looks, stats));
                 }
                 // TODO : Load cities and fronts
                 App.ViewModel.Campaigns.Add(c);
@@ -135,6 +136,7 @@ namespace Dungeon_World_Master.Utility
             element.SetAttributeNode(CreateAttribute(doc, "class", character.Class));
             element.SetAttributeNode(CreateAttribute(doc, "playername", character.PlayerName));
             element.SetAttributeNode(CreateAttribute(doc, "level", character.Level));
+            element.SetAttributeNode(CreateAttribute(doc, "looks", character.Looks));
             element.AppendChild(StatsToXmlElement(doc, character.Stats));
 
             var notes = doc.CreateElement("notes");

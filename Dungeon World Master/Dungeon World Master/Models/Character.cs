@@ -82,6 +82,20 @@ namespace Dungeon_World_Master.Models
             }
         }
 
+        private string _looks;
+        public string Looks
+        {
+            get
+            {
+                return _looks;
+            }
+            set
+            {
+                _looks = value;
+                RaisePropertyChanged("Looks");
+            }
+        }
+
         private string _name;
         public string Name
         {
@@ -133,10 +147,11 @@ namespace Dungeon_World_Master.Models
             Notes = "Humus \r\n LOL \n\n";
             Race = "";
             PlayerName = "";
+            Looks = "";
             Stats = GeneralFunctions.GenerateStats();
         }
 
-        public Character(string alignment, string Class, int level, string name, string notes, string race, string playername, Stat[] stats)
+        public Character(string alignment, string Class, int level, string name, string notes, string race, string playername, string looks, Stat[] stats)
         {
             Alignment = alignment;
             this.Class = Class;
@@ -145,6 +160,7 @@ namespace Dungeon_World_Master.Models
             Notes = notes;
             Race = race;
             PlayerName = playername;
+            Looks = looks;
             Stats = stats;
         }
 
