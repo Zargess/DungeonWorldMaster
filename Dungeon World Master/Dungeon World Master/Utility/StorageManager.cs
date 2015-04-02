@@ -14,6 +14,20 @@ namespace Dungeon_World_Master.Utility
     {
         public static readonly string STORAGEFILE = "Data.xml";
         private static readonly StorageFolder _roamingfolder = ApplicationData.Current.RoamingFolder;
+        private static readonly StorageFolder _localfolder = ApplicationData.Current.LocalFolder;
+
+        private static async Task<bool> FileExists(StorageFolder folder)
+        {
+            try
+            {
+                await folder.GetFileAsync(STORAGEFILE);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
 
         #region Load
         public static async Task LoadAsync()
@@ -53,12 +67,23 @@ namespace Dungeon_World_Master.Utility
                     var level = Int32.Parse(attributes[5]);
                     var looks = attributes[6];
                     var stats = CreateStatsFromXml(character.ChildNodes[0]);
-                    var notes = character.ChildNodes[1].InnerText;
+                    var notes = GetNotes(character.ChildNodes[1].ChildNodes);
                     c.Characters.Add(new Character(alignment, Class, level, name, notes, race, playername, looks, stats));
                 }
                 // TODO : Load cities and fronts
                 App.ViewModel.Campaigns.Add(c);
             }
+        }
+
+        private static IEnumerable<Note> GetNotes(XmlNodeList childNodes)
+        {
+            var res = new List<Note>();
+            foreach (var child in childNodes)
+            {
+                var attributes = child.Attributes.Select(x => x.NodeValue.ToString()).ToList();
+                res.Add(new Note(attributes[0], child.InnerText));
+            }
+            return res;
         }
 
         private static Stat[] CreateStatsFromXml(IXmlNode xmlNode)
@@ -80,9 +105,36 @@ namespace Dungeon_World_Master.Utility
         #region Save
         public static async Task SaveAsync()
         {
-            var file = await _roamingfolder.CreateFileAsync(STORAGEFILE, CreationCollisionOption.ReplaceExisting);
-            var xml = CreateXmlDocument();
-            await xml.SaveToFileAsync(file);
+            try
+            {
+                var fileExists = await FileExists(_roamingfolder);
+                if (fileExists) await BackUpExistingFile();
+                var file = await _roamingfolder.CreateFileAsync(STORAGEFILE, CreationCollisionOption.ReplaceExisting);
+                var xml = CreateXmlDocument();
+                await xml.SaveToFileAsync(file);
+                var properties = await file.GetBasicPropertiesAsync();
+                if (properties.Size != 0) return;
+                var localfile = await _localfolder.GetFileAsync(STORAGEFILE);
+                var text = await FileIO.ReadTextAsync(localfile);
+                await FileIO.WriteTextAsync(file, text);
+            }
+            catch (Exception ex)
+            {
+                var file = await _roamingfolder.CreateFileAsync(STORAGEFILE, CreationCollisionOption.ReplaceExisting);
+                var localfile = await _localfolder.GetFileAsync(STORAGEFILE);
+                var text = await FileIO.ReadTextAsync(localfile);
+                await FileIO.WriteTextAsync(file, text);
+            }
+        }
+
+        private static async Task BackUpExistingFile()
+        {
+            var file = await _roamingfolder.GetFileAsync(STORAGEFILE);
+            var properties = await file.GetBasicPropertiesAsync();
+            if (properties.Size == 0) return;
+            var text = await FileIO.ReadTextAsync(file);
+            var localfile = await _roamingfolder.CreateFileAsync(STORAGEFILE, CreationCollisionOption.ReplaceExisting);
+            await FileIO.WriteTextAsync(localfile, text);
         }
 
         private static XmlDocument CreateXmlDocument()
@@ -140,7 +192,15 @@ namespace Dungeon_World_Master.Utility
             element.AppendChild(StatsToXmlElement(doc, character.Stats));
 
             var notes = doc.CreateElement("notes");
-            notes.InnerText = character.Notes;
+
+            foreach (var note in character.Notes)
+            {
+                var noteelement = doc.CreateElement("note");
+                noteelement.SetAttributeNode(CreateAttribute(doc, "title", note.Title));
+                noteelement.InnerText = note.Body;
+                notes.AppendChild(noteelement);
+            }
+
             element.AppendChild(notes);
 
             return element;

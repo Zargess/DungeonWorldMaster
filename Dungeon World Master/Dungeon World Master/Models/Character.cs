@@ -12,8 +12,8 @@ namespace Dungeon_World_Master.Models
 {
     public class Character : INotifyPropertyChanged
     {
-        private string _notes;
-        public string Notes
+        private ObservableCollection<Note> _notes;
+        public ObservableCollection<Note> Notes
         {
             get
             {
@@ -138,26 +138,40 @@ namespace Dungeon_World_Master.Models
             }
         }
 
+        private Note _selectedNote;
+        public Note SelectedNote
+        {
+            get
+            {
+                return _selectedNote;
+            }
+            set
+            {
+                _selectedNote = value;
+                RaisePropertyChanged("SelectedNote");
+            }
+        }
+
         public Character()
         {
             Alignment = "";
             Class = "";
             Level = 1;
             Name = "";
-            Notes = "Humus \r\n LOL \n\n";
+            Notes = new ObservableCollection<Note> { new Note("New note", "Write some notes here") };
             Race = "";
             PlayerName = "";
             Looks = "";
             Stats = GeneralFunctions.GenerateStats();
         }
 
-        public Character(string alignment, string Class, int level, string name, string notes, string race, string playername, string looks, Stat[] stats)
+        public Character(string alignment, string Class, int level, string name, IEnumerable<Note> notes, string race, string playername, string looks, Stat[] stats)
         {
             Alignment = alignment;
             this.Class = Class;
             Level = level;
             Name = name;
-            Notes = notes;
+            Notes = new ObservableCollection<Note>(notes);
             Race = race;
             PlayerName = playername;
             Looks = looks;

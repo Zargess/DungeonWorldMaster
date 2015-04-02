@@ -148,6 +148,7 @@
     <Compile Include="Models\Campaign.cs" />
     <Compile Include="Models\Character.cs" />
     <Compile Include="Models\Dice.cs" />
+    <Compile Include="Models\Note.cs" />
     <Compile Include="Models\Quest.cs" />
     <Compile Include="Models\Stat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

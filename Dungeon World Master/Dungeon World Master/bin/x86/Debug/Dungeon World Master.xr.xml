@@ -1,12 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Roots xmlns="clr-namespace:Microsoft.Xaml.Tools.XamlCompiler.RootLog;assembly=Microsoft.Windows.UI.Xaml.81.Build.Tasks">
   <Roots.PropertyPathNames>
-    <RootPropertyPathName Name="Notes" />
+    <RootPropertyPathName Name="SelectedNote" />
+    <RootPropertyPathName Name="Body" />
     <RootPropertyPathName Name="Looks" />
     <RootPropertyPathName Name="Alignment" />
     <RootPropertyPathName Name="Level" />
     <RootPropertyPathName Name="Class" />
     <RootPropertyPathName Name="Race" />
+    <RootPropertyPathName Name="Notes" />
     <RootPropertyPathName Name="PlayerName" />
     <RootPropertyPathName Name="Name" />
     <RootPropertyPathName Name="NavigationHelper" />
@@ -111,6 +113,10 @@
     </RootType>
     <RootType FullName="Dungeon_World_Master.CustomControls.StatsTable">
       <RootProperty Name="DataContext" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ListBox">
+      <RootProperty Name="ItemsSource" />
+      <RootEvent Name="SelectionChanged" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Margin" />

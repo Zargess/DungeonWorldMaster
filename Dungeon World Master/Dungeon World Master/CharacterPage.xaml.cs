@@ -95,5 +95,14 @@ namespace Dungeon_World_Master
         }
 
         #endregion
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var listbox = sender as ListBox;
+            if (listbox == null) return;
+            var note = listbox.SelectedItem as Note;
+            if (note == null) return;
+            App.ViewModel.SelectedCharacter.SelectedNote = note;
+        }
     }
 }
