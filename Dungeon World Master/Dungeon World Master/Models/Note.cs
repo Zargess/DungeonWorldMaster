@@ -51,5 +51,19 @@ namespace Dungeon_World_Master.Models
         {
             return Title;
         }
+
+        public override bool Equals(object obj)
+        {
+            if (this == obj) return true;
+            if (obj == null) return false;
+            if (this.GetType() != obj.GetType()) return false;
+            var other = obj as Note;
+            return this.Title.Equals(other.Title) && this.Body.Equals(other.Body);
+        }
+
+        public override int GetHashCode()
+        {
+            return Title.GetHashCode() + Body.GetHashCode();
+        }
     }
 }

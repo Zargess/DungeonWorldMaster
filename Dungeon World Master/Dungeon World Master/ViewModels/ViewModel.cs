@@ -28,6 +28,20 @@ namespace Dungeon_World_Master.ViewModels
             }
         }
 
+        private Note _selectedNote;
+        public Note SelectedNote
+        {
+            get
+            {
+                return _selectedNote;
+            }
+            set
+            {
+                _selectedNote = value;
+                RaisePropertyChanged("SelectedNote");
+            }
+        }
+
         public ViewModel()
         {
             Campaigns = new ObservableCollection<Campaign>();

@@ -1,7 +1,9 @@
-﻿using Dungeon_World_Master.Utility;
+﻿using Dungeon_World_Master.Collections;
+using Dungeon_World_Master.Utility;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
@@ -138,27 +140,13 @@ namespace Dungeon_World_Master.Models
             }
         }
 
-        private Note _selectedNote;
-        public Note SelectedNote
-        {
-            get
-            {
-                return _selectedNote;
-            }
-            set
-            {
-                _selectedNote = value;
-                RaisePropertyChanged("SelectedNote");
-            }
-        }
-
         public Character()
         {
             Alignment = "";
             Class = "";
             Level = 1;
             Name = "";
-            Notes = new ObservableCollection<Note> { new Note("New note", "Write some notes here") };
+            Notes = new ObservableCollection<Note>();
             Race = "";
             PlayerName = "";
             Looks = "";
@@ -177,7 +165,7 @@ namespace Dungeon_World_Master.Models
             Looks = looks;
             Stats = stats;
         }
-
+        
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void RaisePropertyChanged(string name)

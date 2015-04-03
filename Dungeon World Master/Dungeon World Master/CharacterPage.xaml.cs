@@ -2,6 +2,8 @@
 using Dungeon_World_Master.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -43,7 +45,7 @@ namespace Dungeon_World_Master
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
-            this.DataContext = App.ViewModel.SelectedCharacter;
+            this.DataContext = App.ViewModel;
         }
 
         /// <summary>
@@ -102,7 +104,45 @@ namespace Dungeon_World_Master
             if (listbox == null) return;
             var note = listbox.SelectedItem as Note;
             if (note == null) return;
-            App.ViewModel.SelectedCharacter.SelectedNote = note;
+            App.ViewModel.SelectedNote = note;
         }
+
+        private void Add_Note_Pressed(object sender, TappedRoutedEventArgs e)
+        {
+            e.Handled = true;
+            App.ViewModel.SelectedCharacter.Notes.Add(new Note("Add a title", "Add a body text"));
+        }
+
+        private void Remove_Note_Pressed(object sender, TappedRoutedEventArgs e)
+        {
+            e.Handled = true;
+            App.ViewModel.SelectedCharacter.Notes.Remove(App.ViewModel.SelectedNote);
+            App.ViewModel.SelectedNote = null;
+        }
+
+        private void Reload(object sender, TappedRoutedEventArgs e)
+        {
+            e.Handled = true;
+            var _Frame = Window.Current.Content as Frame;
+            _Frame.Navigate(_Frame.Content.GetType());
+            _Frame.GoBack(); // remove from BackStack
+        }
+
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            var box = sender as TextBox;
+            var selectedIndex = NotesHandler.SelectedIndex;
+            var note = App.ViewModel.SelectedCharacter.Notes[selectedIndex];
+            note.Title = box.Text;
+            var notes = new ObservableCollection<Note>();
+            foreach (var item in App.ViewModel.SelectedCharacter.Notes)
+            {
+                notes.Add(item);
+            }
+            App.ViewModel.SelectedCharacter.Notes = notes;
+            NotesHandler.SelectedIndex = selectedIndex;
+        }
+
+        
     }
 }

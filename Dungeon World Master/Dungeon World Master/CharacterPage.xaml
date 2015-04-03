@@ -61,7 +61,7 @@
                         AutomationProperties.Name="Back"
                         AutomationProperties.AutomationId="BackButton"
                         AutomationProperties.ItemType="Navigation Button"/>
-            <TextBlock x:Name="pageTitle" Text="{Binding Name}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
+            <TextBlock x:Name="pageTitle" Text="{Binding SelectedCharacter.Name}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
 
@@ -78,17 +78,39 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" Margin="140,0,0,0"  Style="{StaticResource SubheaderTextBlockStyle}" Text="{Binding PlayerName}" />
+                <TextBlock Grid.Row="0" Margin="140,0,0,0"  Style="{StaticResource SubheaderTextBlockStyle}" Text="{Binding SelectedCharacter.PlayerName}" />
                 
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
+
+                    <controls:StatsTable Grid.Column="0" DataContext="{Binding SelectedCharacter}" />
                     
-                    <controls:StatsTable Grid.Column="0" DataContext="{Binding}" />
-                    
-                    <ListBox Grid.Column="1" ItemsSource="{Binding Notes}" SelectionChanged="ListBox_SelectionChanged" />
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Button Grid.Column="0" Content="Add" Tapped="Add_Note_Pressed" HorizontalAlignment="Stretch" />
+                            <Button Grid.Column="1" Content="Remove" Tapped="Remove_Note_Pressed" HorizontalAlignment="Stretch" />
+                            <Button Grid.Column="2" Content="Reload" Tapped="Reload" HorizontalAlignment="Stretch" />
+                        </Grid>
+                        <ListBox x:Name="NotesHandler" Grid.Row="1" ItemsSource="{Binding SelectedCharacter.Notes}" SelectionChanged="ListBox_SelectionChanged">
+                            <DataTemplate>
+                                <ItemsControl>
+                                    <TextBlock Text="{Binding Title}" />
+                                </ItemsControl>
+                            </DataTemplate>
+                        </ListBox>
+                    </Grid>
                 </Grid>
 
                 <Grid Grid.Row="2">
@@ -110,16 +132,21 @@
                     <TextBlock Text="{StaticResource Alignment}" Style="{StaticResource InformationHeadingBlock}" Grid.Column="0" Grid.Row="3" />
                     <TextBlock Text="{StaticResource Looks}" Style="{StaticResource InformationHeadingBlock}" Grid.Column="0" Grid.Row="4" />
 
-                    <TextBox Text="{Binding Race, Mode=TwoWay}" Style="{StaticResource InformationBodyBlock}" Grid.Column="1" Grid.Row="0" />
-                    <TextBox Text="{Binding Class, Mode=TwoWay}" Style="{StaticResource InformationBodyBlock}" Grid.Column="1" Grid.Row="1" />
-                    <TextBox Text="{Binding Level}" Style="{StaticResource InformationBodyBlock}" Grid.Column="1" Grid.Row="2" />
-                    <TextBox Text="{Binding Alignment, Mode=TwoWay}" Style="{StaticResource InformationBodyBlock}" Grid.Column="1" Grid.Row="3" />
-                    <TextBox Text="{Binding Looks, Mode=TwoWay}" Style="{StaticResource InformationBodyBlock}" Grid.Column="1" Grid.Row="4" />
+                    <TextBox Text="{Binding SelectedCharacter.Race, Mode=TwoWay}" Style="{StaticResource InformationBodyBlock}" Grid.Column="1" Grid.Row="0" />
+                    <TextBox Text="{Binding SelectedCharacter.Class, Mode=TwoWay}" Style="{StaticResource InformationBodyBlock}" Grid.Column="1" Grid.Row="1" />
+                    <TextBox Text="{Binding SelectedCharacter.Level}" Style="{StaticResource InformationBodyBlock}" Grid.Column="1" Grid.Row="2" />
+                    <TextBox Text="{Binding SelectedCharacter.Alignment, Mode=TwoWay}" Style="{StaticResource InformationBodyBlock}" Grid.Column="1" Grid.Row="3" />
+                    <TextBox Text="{Binding SelectedCharacter.Looks, Mode=TwoWay}" Style="{StaticResource InformationBodyBlock}" Grid.Column="1" Grid.Row="4" />
                 </Grid>
             </Grid>
 
             <Grid Grid.Column="1">
-                <TextBox Style="{StaticResource MultilineTextBoxStyle}" Text="{Binding SelectedNote.Body, Mode=TwoWay}" Margin="5" />
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBox Grid.Row="0" FontSize="22" Text="{Binding SelectedNote.Title, Mode=TwoWay}" LostFocus="TextBox_LostFocus" Margin="5" HorizontalAlignment="Stretch" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Foreground="White" />
+                <TextBox Grid.Row="1" Style="{StaticResource MultilineTextBoxStyle}" Text="{Binding SelectedNote.Body, Mode=TwoWay}" Margin="5" />
             </Grid>
         </Grid>
     </Grid>
