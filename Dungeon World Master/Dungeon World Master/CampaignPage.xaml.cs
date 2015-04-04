@@ -1,6 +1,5 @@
 ﻿using Dungeon_World_Master.Common;
 using Dungeon_World_Master.Models;
-using Dungeon_World_Master.Utility;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,27 +15,18 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Items Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234233
+// The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
 namespace Dungeon_World_Master
 {
     /// <summary>
-    /// A page that displays a collection of item previews.  In the Split Application this page
-    /// is used to display and select one of the available groups.
+    /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class CampaignPage : Page
     {
+
         private NavigationHelper navigationHelper;
-        private ObservableDictionary defaultViewModel = new ObservableDictionary();
-
-        /// <summary>
-        /// This can be changed to a strongly typed view model.
-        /// </summary>
-        public ObservableDictionary DefaultViewModel
-        {
-            get { return this.defaultViewModel; }
-        }
-
+        
         /// <summary>
         /// NavigationHelper is used on each page to aid in navigation and 
         /// process lifetime management
@@ -46,16 +36,18 @@ namespace Dungeon_World_Master
             get { return this.navigationHelper; }
         }
 
-        public MainPage()
+
+        public CampaignPage()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
-            this.DataContext = App.ViewModel;
             this.navigationHelper.LoadState += navigationHelper_LoadState;
+            this.navigationHelper.SaveState += navigationHelper_SaveState;
+            this.DataContext = App.ViewModel;
         }
 
         /// <summary>
-        /// Populates the page with content passed during navigation.  Any saved state is also
+        /// Populates the page with content passed during navigation. Any saved state is also
         /// provided when recreating a page from a prior session.
         /// </summary>
         /// <param name="sender">
@@ -64,10 +56,21 @@ namespace Dungeon_World_Master
         /// <param name="e">Event data that provides both the navigation parameter passed to
         /// <see cref="Frame.Navigate(Type, Object)"/> when this page was initially requested and
         /// a dictionary of state preserved by this page during an earlier
-        /// session.  The state will be null the first time a page is visited.</param>
+        /// session. The state will be null the first time a page is visited.</param>
         private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
-            // TODO: Assign a bindable collection of items to this.DefaultViewModel["Items"]
+        }
+
+        /// <summary>
+        /// Preserves state associated with this page in case the application is suspended or the
+        /// page is discarded from the navigation cache.  Values must conform to the serialization
+        /// requirements of <see cref="Common.SuspensionManager.SessionState"/>.
+        /// </summary>
+        /// <param name="sender">The source of the event; typically <see cref="Common.NavigationHelper"/></param>
+        /// <param name="e">Event data that provides an empty dictionary to be populated with
+        /// serializable state.</param>
+        private void navigationHelper_SaveState(object sender, SaveStateEventArgs e)
+        {
         }
 
         #region NavigationHelper registration
@@ -93,16 +96,16 @@ namespace Dungeon_World_Master
 
         #endregion
 
-        private void Add_New_Campaign(object sender, RoutedEventArgs e)
+        private void Add_New_Character(object sender, RoutedEventArgs e)
         {
-
+            App.ViewModel.SelectedCampaign.Characters.Add(new Character());
         }
 
-        private void itemGridView_Clicked(object sender, ItemClickEventArgs e)
+        private void character_grid_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var campaign = e.ClickedItem as Campaign;
-            App.ViewModel.SelectedCampaign = campaign;
-            this.Frame.Navigate(typeof(CampaignPage));
+            var character = e.ClickedItem as Character;
+            App.ViewModel.SelectedCharacter = character;
+            this.Frame.Navigate(typeof(CharacterPage));
         }
     }
 }

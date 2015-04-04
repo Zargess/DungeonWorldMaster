@@ -20,13 +20,13 @@
     <AppXManifest Include="C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-03T09:38:07.867</Modified>
+      <Modified>2015-04-04T19:33:58.628</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\Dungeon World Master.exe">
       <PackagePath>Dungeon World Master.exe</PackagePath>
-      <Modified>2015-04-03T10:25:50.618</Modified>
+      <Modified>2015-04-04T19:54:26.094</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
@@ -52,9 +52,13 @@
       <PackagePath>App.xbf</PackagePath>
       <Modified>2015-04-01T13:58:43.662</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\CampaignPage.xbf">
+      <PackagePath>CampaignPage.xbf</PackagePath>
+      <Modified>2015-04-04T19:54:25.815</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\CharacterPage.xbf">
       <PackagePath>CharacterPage.xbf</PackagePath>
-      <Modified>2015-04-03T10:20:59.704</Modified>
+      <Modified>2015-04-04T19:54:25.821</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\CustomControls\HexagonGrid.xbf">
       <PackagePath>CustomControls\HexagonGrid.xbf</PackagePath>
@@ -66,15 +70,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2015-04-01T13:58:43.678</Modified>
+      <Modified>2015-04-03T16:32:19.240</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\Dungeon World Master.xr.xml">
       <PackagePath>Dungeon World Master.xr.xml</PackagePath>
-      <Modified>2015-04-03T10:20:59.673</Modified>
+      <Modified>2015-04-04T19:54:25.771</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-04-03T09:38:07.702</Modified>
+      <Modified>2015-04-04T19:33:57.961</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

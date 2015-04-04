@@ -97,11 +97,9 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition />
                                 <ColumnDefinition />
-                                <ColumnDefinition />
                             </Grid.ColumnDefinitions>
                             <Button Grid.Column="0" Content="Add" Tapped="Add_Note_Pressed" HorizontalAlignment="Stretch" />
                             <Button Grid.Column="1" Content="Remove" Tapped="Remove_Note_Pressed" HorizontalAlignment="Stretch" />
-                            <Button Grid.Column="2" Content="Reload" Tapped="Reload" HorizontalAlignment="Stretch" />
                         </Grid>
                         <ListBox x:Name="NotesHandler" Grid.Row="1" ItemsSource="{Binding SelectedCharacter.Notes}" SelectionChanged="ListBox_SelectionChanged">
                             <DataTemplate>

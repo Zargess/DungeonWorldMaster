@@ -14,6 +14,20 @@ namespace Dungeon_World_Master.ViewModels
     {
         public ObservableCollection<Campaign> Campaigns { get; private set; }
 
+        private Campaign _selectedCampaign;
+        public Campaign SelectedCampaign
+        {
+            get
+            {
+                return _selectedCampaign;
+            }
+            set
+            {
+                _selectedCampaign = value;
+                RaisePropertyChanged("SelectedCampaign");
+            }
+        }
+
         private Character _selectedCharacter;
         public Character SelectedCharacter
         {

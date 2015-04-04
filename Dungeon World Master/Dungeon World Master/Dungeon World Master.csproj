@@ -103,6 +103,10 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Page Include="CampaignPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CharacterPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -123,6 +127,9 @@
   <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CampaignPage.xaml.cs">
+      <DependentUpon>CampaignPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="CharacterPage.xaml.cs">
       <DependentUpon>CharacterPage.xaml</DependentUpon>
@@ -149,6 +156,7 @@
     <Compile Include="Models\Campaign.cs" />
     <Compile Include="Models\Character.cs" />
     <Compile Include="Models\Dice.cs" />
+    <Compile Include="Models\Front.cs" />
     <Compile Include="Models\Note.cs" />
     <Compile Include="Models\Quest.cs" />
     <Compile Include="Models\Stat.cs" />

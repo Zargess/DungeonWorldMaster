@@ -97,11 +97,9 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition />
                                 <ColumnDefinition />
-                                <ColumnDefinition />
                             </Grid.ColumnDefinitions>
                             <Button x:ConnectionId='3' Grid.Column="0" Content="Add"                           HorizontalAlignment="Stretch" />
                             <Button x:ConnectionId='4' Grid.Column="1" Content="Remove"                              HorizontalAlignment="Stretch" />
-                            <Button x:ConnectionId='5' Grid.Column="2" Content="Reload"                 HorizontalAlignment="Stretch" />
                         </Grid>
                         <ListBox x:ConnectionId='2' x:Name="NotesHandler" Grid.Row="1" ItemsSource="{Binding SelectedCharacter.Notes}"                                            >
                             <DataTemplate>

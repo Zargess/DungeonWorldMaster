@@ -10,6 +10,7 @@ namespace Dungeon_World_Master.Models {
     public class Campaign {
         public ObservableCollection<Character> Characters { get; private set; }
         public ObservableCollection<ISteading> Cities { get; private set; }
+        public ObservableCollection<Note> CampaignNotes { get; private set; }
 
         public string Name { get; set; }
 
