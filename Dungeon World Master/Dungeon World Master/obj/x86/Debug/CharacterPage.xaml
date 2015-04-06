@@ -61,8 +61,8 @@
                         AutomationProperties.Name="Back"
                         AutomationProperties.AutomationId="BackButton"
                         AutomationProperties.ItemType="Navigation Button"/>
-            <TextBlock x:Name="pageTitle" Text="{Binding SelectedCharacter.Name}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
-                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
+            <TextBox x:Name="pageTitle" Text="{Binding SelectedCharacter.Name, Mode=TwoWay}" IsReadOnly="False" TextAlignment="Center" FontSize="36" Grid.Column="1" 
+                        IsHitTestVisible="True" Width="800" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
 
         <Grid Grid.Row="1">
@@ -78,7 +78,7 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" Margin="140,0,0,0"  Style="{StaticResource SubheaderTextBlockStyle}" Text="{Binding SelectedCharacter.PlayerName}" />
+                <TextBox Grid.Row="0" Margin="140,0,0,0" HorizontalAlignment="Left" Width="400"  FontSize="30" Text="{Binding SelectedCharacter.PlayerName, Mode=TwoWay}" />
                 
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>

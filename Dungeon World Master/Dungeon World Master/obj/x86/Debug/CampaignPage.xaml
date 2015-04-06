@@ -14,7 +14,7 @@
 
 
     </Page.Resources>
-    
+
     <Page.BottomAppBar>
         <CommandBar>
             <CommandBar.SecondaryCommands>
@@ -64,22 +64,22 @@
 
             <Grid Grid.Column="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
+                    <RowDefinition Height="80*" />
+                    <RowDefinition Height="20*" />
                 </Grid.RowDefinitions>
-
+                <TextBlock Grid.Row="0" HorizontalAlignment="Center" Text="Characters" Style="{StaticResource SubheaderTextBlockStyle}" />
                 <GridView x:ConnectionId='2'
                      x:Name="character_grid"
                      AutomationProperties.AutomationId="ItemsGridView"
                      AutomationProperties.Name="Items"
-                     TabIndex="1"
-                     Grid.RowSpan="2"
-                     Padding="116,136,116,46"
+                     Margin="116,20,0,0"
                      ItemsSource="{Binding Source={StaticResource characters}}"
                      SelectionMode="None"
                      IsSwipeEnabled="false"
                      IsItemClickEnabled="True"
-                                                         >
+                                                         
+                     Height="700"
+                     Grid.Row="0">
                     <GridView.ItemTemplate>
                         <DataTemplate>
                             <Grid HorizontalAlignment="Left" Width="200" Height="200">
@@ -88,12 +88,18 @@
                                 </Border>
                                 <StackPanel VerticalAlignment="Bottom" Background="{ThemeResource ListViewItemOverlayBackgroundThemeBrush}">
                                     <TextBlock Text="{Binding Name}" Foreground="{ThemeResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" Height="60" Margin="15,0,15,0" FontWeight="SemiBold"/>
-                                    <TextBlock Text="{Binding Subtitle}" Foreground="{ThemeResource ListViewItemOverlaySecondaryForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" TextWrapping="NoWrap" Margin="15,0,15,10" FontSize="12"/>
+                                    <TextBlock Text="{Binding PlayerName}" Foreground="{ThemeResource ListViewItemOverlaySecondaryForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" TextWrapping="NoWrap" Margin="15,0,15,10" FontSize="12"/>
                                 </StackPanel>
                             </Grid>
                         </DataTemplate>
                     </GridView.ItemTemplate>
                 </GridView>
+                
+                <Button Grid.Row="1" Content="Maps" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+            </Grid>
+            
+            <Grid Grid.Column="1">
+                
             </Grid>
         </Grid>
     </Grid>

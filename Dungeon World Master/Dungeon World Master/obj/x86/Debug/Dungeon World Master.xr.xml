@@ -3,7 +3,7 @@
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="SelectedCampaign" />
     <RootPropertyPathName Name="Characters" />
-    <RootPropertyPathName Name="Subtitle" />
+    <RootPropertyPathName Name="PlayerName" />
     <RootPropertyPathName Name="Name" />
     <RootPropertyPathName Name="ImagePath" />
     <RootPropertyPathName Name="Title" />
@@ -18,11 +18,11 @@
     <RootPropertyPathName Name="Class" />
     <RootPropertyPathName Name="Race" />
     <RootPropertyPathName Name="Notes" />
-    <RootPropertyPathName Name="PlayerName" />
     <RootPropertyPathName Name="Stats" />
     <RootPropertyPathName Name="Modifier" />
     <RootPropertyPathName Name="Score" />
     <RootPropertyPathName Name="Campaigns" />
+    <RootPropertyPathName Name="Subtitle" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -115,14 +115,32 @@
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
       <RootProperty Name="Width" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Text" />
+      <RootProperty Name="Style" />
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="FontWeight" />
+      <RootProperty Name="TextWrapping" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="Inlines" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="TextAlignment" />
+      <RootProperty Name="IsHitTestVisible" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.GridView">
-      <RootProperty Name="TabIndex" />
-      <RootProperty Name="Padding" />
+      <RootProperty Name="Margin" />
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="SelectionMode" />
       <RootProperty Name="IsSwipeEnabled" />
       <RootProperty Name="IsItemClickEnabled" />
+      <RootProperty Name="Height" />
       <RootProperty Name="ItemTemplate" />
+      <RootProperty Name="TabIndex" />
+      <RootProperty Name="Padding" />
       <RootEvent Name="ItemClick" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Automation.AutomationProperties">
@@ -132,6 +150,15 @@
       <RootMethod Name="SetName" />
       <RootMethod Name="GetItemType" />
       <RootMethod Name="SetItemType" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Button">
+      <RootProperty Name="Content" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Command" />
+      <RootProperty Name="Style" />
+      <RootEvent Name="Tapped" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
@@ -149,33 +176,9 @@
       <RootProperty Name="Background" />
       <RootProperty Name="Children" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
-      <RootProperty Name="Text" />
-      <RootProperty Name="Foreground" />
-      <RootProperty Name="Style" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="FontWeight" />
-      <RootProperty Name="TextWrapping" />
-      <RootProperty Name="FontSize" />
-      <RootProperty Name="IsHitTestVisible" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Inlines" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="TextAlignment" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
       <RootProperty Name="Source" />
       <RootProperty Name="Stretch" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Button">
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Command" />
-      <RootProperty Name="Style" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Content" />
-      <RootProperty Name="HorizontalAlignment" />
-      <RootEvent Name="Tapped" />
     </RootType>
     <RootType FullName="Dungeon_World_Master.CampaignPage" />
     <RootType FullName="Dungeon_World_Master.CustomControls.StatsTable">

@@ -11,6 +11,7 @@ namespace Dungeon_World_Master.Models {
         public ObservableCollection<Character> Characters { get; private set; }
         public ObservableCollection<ISteading> Cities { get; private set; }
         public ObservableCollection<Note> CampaignNotes { get; private set; }
+        public ObservableCollection<Front> Fronts { get; private set; }
 
         public string Name { get; set; }
 

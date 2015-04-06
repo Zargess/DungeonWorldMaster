@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dungeon_World_Master.Models
 {
-    class Front
+    public class Front
     {
     }
 }

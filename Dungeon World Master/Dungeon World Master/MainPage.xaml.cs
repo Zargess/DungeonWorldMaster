@@ -95,7 +95,7 @@ namespace Dungeon_World_Master
 
         private void Add_New_Campaign(object sender, RoutedEventArgs e)
         {
-
+            App.ViewModel.Campaigns.Add(new Campaign("Insert name"));
         }
 
         private void itemGridView_Clicked(object sender, ItemClickEventArgs e)
