@@ -155,6 +155,7 @@
       <RootProperty Name="Content" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="FontSize" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Command" />
       <RootProperty Name="Style" />
