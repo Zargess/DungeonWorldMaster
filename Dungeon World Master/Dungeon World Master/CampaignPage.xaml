@@ -11,8 +11,7 @@
 
     <Page.Resources>
         <CollectionViewSource x:Name="characters" Source="{Binding SelectedCampaign.Characters}" />
-
-
+        <CollectionViewSource x:Name="fronts" Source="{Binding SelectedCampaign.Fronts}" />
     </Page.Resources>
 
     <Page.BottomAppBar>
@@ -105,24 +104,62 @@
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
                     <Grid.RowDefinitions>
-                            <RowDefinition Height="40" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-                        <Grid Grid.Row="0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition />
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
-                            <Button Grid.Column="0" Content="Add" Tapped="Add_Note_Pressed" HorizontalAlignment="Stretch" />
-                            <Button Grid.Column="1" Content="Remove" Tapped="Remove_Note_Pressed" HorizontalAlignment="Stretch" />
-                        </Grid>
-                        <ListBox x:Name="NotesHandler" Grid.Row="1" ItemsSource="{Binding SelectedCharacter.Notes}" SelectionChanged="ListBox_SelectionChanged">
-                            <DataTemplate>
-                                <ItemsControl>
-                                    <TextBlock Text="{Binding Title}" />
-                                </ItemsControl>
-                            </DataTemplate>
-                        </ListBox>
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" Content="Add" Tapped="Add_Note_Pressed" HorizontalAlignment="Stretch" />
+                        <Button Grid.Column="1" Content="Remove" Tapped="Remove_Note_Pressed" HorizontalAlignment="Stretch" />
+                    </Grid>
+                    <ListBox x:Name="NotesHandler" Grid.Row="1" ItemsSource="{Binding SelectedCharacter.Notes}" SelectionChanged="ListBox_SelectionChanged">
+                        <DataTemplate>
+                            <ItemsControl>
+                                <TextBlock Text="{Binding Title}" />
+                            </ItemsControl>
+                        </DataTemplate>
+                    </ListBox>
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="80*" />
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <GridView
+                            x:Name="front_grid"
+                            AutomationProperties.AutomationId="ItemsGridView"
+                            AutomationProperties.Name="Items"
+                            ItemsSource="{Binding Source={StaticResource fronts}}"
+                            SelectionMode="None"
+                            IsSwipeEnabled="false"
+                            IsItemClickEnabled="True"
+                            ItemClick="front_grid_ItemClick"
+                            Grid.Row="0">
+                            <GridView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid HorizontalAlignment="Left" Width="200" Height="200">
+                                        <Border Background="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}">
+                                            <Image Source="{Binding ImagePath}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Title}"/>
+                                        </Border>
+                                        <StackPanel VerticalAlignment="Bottom" Background="{ThemeResource ListViewItemOverlayBackgroundThemeBrush}">
+                                            <TextBlock Text="{Binding Name}" Foreground="{ThemeResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" Height="60" Margin="15,0,15,0" FontWeight="SemiBold"/>
+                                            <TextBlock Text="{Binding PlayerName}" Foreground="{ThemeResource ListViewItemOverlaySecondaryForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" TextWrapping="NoWrap" Margin="15,0,15,10" FontSize="12"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </DataTemplate>
+                            </GridView.ItemTemplate>
+                        </GridView>
+                    </Grid>
                 </Grid>
             </Grid>
         </Grid>
