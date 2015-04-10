@@ -12,6 +12,7 @@ namespace Dungeon_World_Master.Utility
 {
     public class StorageManager
     {
+        // TODO : Consider using JSON.NET instead for an easy way to serialize all data
         public static readonly string STORAGEFILE = "Data.xml";
         private static readonly StorageFolder _roamingfolder = ApplicationData.Current.RoamingFolder;
         private static readonly StorageFolder _localfolder = ApplicationData.Current.LocalFolder;
@@ -169,7 +170,7 @@ namespace Dungeon_World_Master.Utility
             }
             result.AppendChild(characters);
 
-            // TODO : Convert cities and fronts to xml
+            // TODO : Convert notes, cities and fronts to xml
 
             return result;
         }

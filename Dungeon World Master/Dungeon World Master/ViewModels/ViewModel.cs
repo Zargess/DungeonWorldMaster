@@ -56,6 +56,19 @@ namespace Dungeon_World_Master.ViewModels
             }
         }
 
+        private Front _selectedFront;
+        public Front SelectedFront {
+            get
+            {
+                return _selectedFront;
+            }
+            set
+            {
+                _selectedFront = value;
+                RaisePropertyChanged("SelectedFront");
+            }
+        }
+
         public ViewModel()
         {
             Campaigns = new ObservableCollection<Campaign>();

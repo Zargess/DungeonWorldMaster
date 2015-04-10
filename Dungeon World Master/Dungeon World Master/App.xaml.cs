@@ -1,14 +1,17 @@
 ﻿using Dungeon_World_Master.Utility;
 using Dungeon_World_Master.ViewModels;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -26,14 +29,21 @@ namespace Dungeon_World_Master
     /// </summary>
     public partial class App : Application
     {
-        private static ViewModel _viewmodel;
-        public static ViewModel ViewModel {
-            get {
-                if (_viewmodel == null) _viewmodel = new ViewModel();
-                return _viewmodel;
-            }
-        }
+        //private static ViewModel _viewmodel;
+        //public static ViewModel ViewModel
+        //{
+        //    get
+        //    {
+        //        if (_viewmodel == null) _viewmodel = new ViewModel();
+        //        return _viewmodel;
+        //    }
+        //    private set
+        //    {
+        //        _viewmodel = value;
+        //    }
+        //}
 
+        public static ViewModel ViewModel { get; private set; }
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -43,8 +53,9 @@ namespace Dungeon_World_Master
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-            
+            this.Resuming += App_Resuming;
         }
+
 
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
@@ -60,6 +71,7 @@ namespace Dungeon_World_Master
                 this.DebugSettings.EnableFrameRateCounter = true;
             }
 #endif
+            await LoadAsync();
 
             Frame rootFrame = Window.Current.Content as Frame;
 
@@ -92,7 +104,6 @@ namespace Dungeon_World_Master
             }
             // Ensure the current window is active
             Window.Current.Activate();
-            await StorageManager.LoadAsync();
         }
 
         /// <summary>
@@ -116,8 +127,38 @@ namespace Dungeon_World_Master
         {
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
-            await StorageManager.SaveAsync();
+            await SaveAsync();
             deferral.Complete();
+        }
+
+        private async void App_Resuming(object sender, object e)
+        {
+            await LoadAsync();
+        }
+
+        private async Task LoadAsync()
+        {
+            //await StorageManager.LoadAsync();
+            try
+            {
+                var folder = ApplicationData.Current.RoamingFolder;
+                var file = await folder.GetFileAsync("Data.json");
+                var content = await FileIO.ReadTextAsync(file);
+                ViewModel = JsonConvert.DeserializeObject<ViewModel>(content);
+            }
+            catch (Exception e)
+            {
+                ViewModel = new ViewModel();
+            }
+        }
+
+        private async Task SaveAsync()
+        {
+            // await StorageManager.SaveAsync();
+            var folder = ApplicationData.Current.RoamingFolder;
+            var file = await folder.CreateFileAsync("Data.json", CreationCollisionOption.ReplaceExisting);
+            var data = await JsonConvert.SerializeObjectAsync(ViewModel, Formatting.Indented);
+            await FileIO.WriteTextAsync(file, data);
         }
     }
 }

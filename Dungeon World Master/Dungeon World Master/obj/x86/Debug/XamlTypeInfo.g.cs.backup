@@ -124,7 +124,7 @@ namespace Dungeon_World_Master.Dungeon_World_Master_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[14];
+            _typeNameTable = new string[15];
             _typeNameTable[0] = "Dungeon_World_Master.CampaignPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
@@ -135,12 +135,13 @@ namespace Dungeon_World_Master.Dungeon_World_Master_XamlTypeInfo
             _typeNameTable[7] = "Dungeon_World_Master.Shapes.Hexagon";
             _typeNameTable[8] = "Windows.UI.Xaml.Shapes.Path";
             _typeNameTable[9] = "Dungeon_World_Master.CustomControls.HexagonGrid";
-            _typeNameTable[10] = "Dungeon_World_Master.MainPage";
+            _typeNameTable[10] = "Dungeon_World_Master.FrontPage";
             _typeNameTable[11] = "Dungeon_World_Master.Common.ObservableDictionary";
             _typeNameTable[12] = "Object";
             _typeNameTable[13] = "String";
+            _typeNameTable[14] = "Dungeon_World_Master.MainPage";
 
-            _typeTable = new global::System.Type[14];
+            _typeTable = new global::System.Type[15];
             _typeTable[0] = typeof(global::Dungeon_World_Master.CampaignPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
@@ -151,10 +152,11 @@ namespace Dungeon_World_Master.Dungeon_World_Master_XamlTypeInfo
             _typeTable[7] = typeof(global::Dungeon_World_Master.Shapes.Hexagon);
             _typeTable[8] = typeof(global::Windows.UI.Xaml.Shapes.Path);
             _typeTable[9] = typeof(global::Dungeon_World_Master.CustomControls.HexagonGrid);
-            _typeTable[10] = typeof(global::Dungeon_World_Master.MainPage);
+            _typeTable[10] = typeof(global::Dungeon_World_Master.FrontPage);
             _typeTable[11] = typeof(global::Dungeon_World_Master.Common.ObservableDictionary);
             _typeTable[12] = typeof(global::System.Object);
             _typeTable[13] = typeof(global::System.String);
+            _typeTable[14] = typeof(global::Dungeon_World_Master.MainPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -194,8 +196,9 @@ namespace Dungeon_World_Master.Dungeon_World_Master_XamlTypeInfo
         private object Activate_6_CharacterPage() { return new global::Dungeon_World_Master.CharacterPage(); }
         private object Activate_7_Hexagon() { return new global::Dungeon_World_Master.Shapes.Hexagon(); }
         private object Activate_9_HexagonGrid() { return new global::Dungeon_World_Master.CustomControls.HexagonGrid(); }
-        private object Activate_10_MainPage() { return new global::Dungeon_World_Master.MainPage(); }
+        private object Activate_10_FrontPage() { return new global::Dungeon_World_Master.FrontPage(); }
         private object Activate_11_ObservableDictionary() { return new global::Dungeon_World_Master.Common.ObservableDictionary(); }
+        private object Activate_14_MainPage() { return new global::Dungeon_World_Master.MainPage(); }
         private void MapAdd_11_ObservableDictionary(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.String, global::System.Object>)instance;
@@ -274,9 +277,9 @@ namespace Dungeon_World_Master.Dungeon_World_Master_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 10:   //  Dungeon_World_Master.MainPage
+            case 10:   //  Dungeon_World_Master.FrontPage
                 userType = new global::Dungeon_World_Master.Dungeon_World_Master_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_10_MainPage;
+                userType.Activator = Activate_10_FrontPage;
                 userType.AddMemberName("DefaultViewModel");
                 userType.AddMemberName("NavigationHelper");
                 userType.SetIsLocalType();
@@ -298,6 +301,15 @@ namespace Dungeon_World_Master.Dungeon_World_Master_XamlTypeInfo
             case 13:   //  String
                 xamlType = new global::Dungeon_World_Master.Dungeon_World_Master_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
+
+            case 14:   //  Dungeon_World_Master.MainPage
+                userType = new global::Dungeon_World_Master.Dungeon_World_Master_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_14_MainPage;
+                userType.AddMemberName("DefaultViewModel");
+                userType.AddMemberName("NavigationHelper");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
             }
             return xamlType;
         }
@@ -313,12 +325,22 @@ namespace Dungeon_World_Master.Dungeon_World_Master_XamlTypeInfo
             var that = (global::Dungeon_World_Master.CharacterPage)instance;
             return that.NavigationHelper;
         }
-        private object get_2_MainPage_DefaultViewModel(object instance)
+        private object get_2_FrontPage_DefaultViewModel(object instance)
+        {
+            var that = (global::Dungeon_World_Master.FrontPage)instance;
+            return that.DefaultViewModel;
+        }
+        private object get_3_FrontPage_NavigationHelper(object instance)
+        {
+            var that = (global::Dungeon_World_Master.FrontPage)instance;
+            return that.NavigationHelper;
+        }
+        private object get_4_MainPage_DefaultViewModel(object instance)
         {
             var that = (global::Dungeon_World_Master.MainPage)instance;
             return that.DefaultViewModel;
         }
-        private object get_3_MainPage_NavigationHelper(object instance)
+        private object get_5_MainPage_NavigationHelper(object instance)
         {
             var that = (global::Dungeon_World_Master.MainPage)instance;
             return that.NavigationHelper;
@@ -343,16 +365,28 @@ namespace Dungeon_World_Master.Dungeon_World_Master_XamlTypeInfo
                 xamlMember.Getter = get_1_CharacterPage_NavigationHelper;
                 xamlMember.SetIsReadOnly();
                 break;
+            case "Dungeon_World_Master.FrontPage.DefaultViewModel":
+                userType = (global::Dungeon_World_Master.Dungeon_World_Master_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Dungeon_World_Master.FrontPage");
+                xamlMember = new global::Dungeon_World_Master.Dungeon_World_Master_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "Dungeon_World_Master.Common.ObservableDictionary");
+                xamlMember.Getter = get_2_FrontPage_DefaultViewModel;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "Dungeon_World_Master.FrontPage.NavigationHelper":
+                userType = (global::Dungeon_World_Master.Dungeon_World_Master_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Dungeon_World_Master.FrontPage");
+                xamlMember = new global::Dungeon_World_Master.Dungeon_World_Master_XamlTypeInfo.XamlMember(this, "NavigationHelper", "Dungeon_World_Master.Common.NavigationHelper");
+                xamlMember.Getter = get_3_FrontPage_NavigationHelper;
+                xamlMember.SetIsReadOnly();
+                break;
             case "Dungeon_World_Master.MainPage.DefaultViewModel":
                 userType = (global::Dungeon_World_Master.Dungeon_World_Master_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Dungeon_World_Master.MainPage");
                 xamlMember = new global::Dungeon_World_Master.Dungeon_World_Master_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "Dungeon_World_Master.Common.ObservableDictionary");
-                xamlMember.Getter = get_2_MainPage_DefaultViewModel;
+                xamlMember.Getter = get_4_MainPage_DefaultViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Dungeon_World_Master.MainPage.NavigationHelper":
                 userType = (global::Dungeon_World_Master.Dungeon_World_Master_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Dungeon_World_Master.MainPage");
                 xamlMember = new global::Dungeon_World_Master.Dungeon_World_Master_XamlTypeInfo.XamlMember(this, "NavigationHelper", "Dungeon_World_Master.Common.NavigationHelper");
-                xamlMember.Getter = get_3_MainPage_NavigationHelper;
+                xamlMember.Getter = get_5_MainPage_NavigationHelper;
                 xamlMember.SetIsReadOnly();
                 break;
             }

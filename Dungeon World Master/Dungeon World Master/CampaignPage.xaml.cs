@@ -2,6 +2,7 @@
 using Dungeon_World_Master.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -86,11 +87,13 @@ namespace Dungeon_World_Master
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            App.ViewModel.SelectedNote = null;
             navigationHelper.OnNavigatedTo(e);
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
+            App.ViewModel.SelectedNote = null;
             navigationHelper.OnNavigatedFrom(e);
         }
 
@@ -101,11 +104,60 @@ namespace Dungeon_World_Master
             App.ViewModel.SelectedCampaign.Characters.Add(new Character());
         }
 
+        private void Add_New_Front(object sender, RoutedEventArgs e)
+        {
+            App.ViewModel.SelectedCampaign.Fronts.Add(new Front());
+        }
+
         private void character_grid_ItemClick(object sender, ItemClickEventArgs e)
         {
             var character = e.ClickedItem as Character;
             App.ViewModel.SelectedCharacter = character;
             this.Frame.Navigate(typeof(CharacterPage));
+        }
+
+        private void front_grid_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var front = e.ClickedItem as Front;
+            App.ViewModel.SelectedFront = front;
+            this.Frame.Navigate(typeof(FrontPage));
+        }
+
+        private void Add_Note_Pressed(object sender, TappedRoutedEventArgs e)
+        {
+            e.Handled = true;
+            App.ViewModel.SelectedCampaign.Notes.Add(new Note("Add a title", "Add a body text"));
+        }
+
+        private void Remove_Note_Pressed(object sender, TappedRoutedEventArgs e)
+        {
+            e.Handled = true;
+            App.ViewModel.SelectedCampaign.Notes.Remove(App.ViewModel.SelectedNote);
+            App.ViewModel.SelectedNote = null;
+        }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var listbox = sender as ListBox;
+            if (listbox == null) return;
+            var note = listbox.SelectedItem as Note;
+            if (note == null) return;
+            App.ViewModel.SelectedNote = note;
+        }
+
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            var box = sender as TextBox;
+            var selectedIndex = NotesHandler.SelectedIndex;
+            var note = App.ViewModel.SelectedCampaign.Notes[selectedIndex];
+            note.Title = box.Text;
+            var notes = new ObservableCollection<Note>();
+            foreach (var item in App.ViewModel.SelectedCampaign.Notes)
+            {
+                notes.Add(item);
+            }
+            App.ViewModel.SelectedCampaign.Notes = notes;
+            NotesHandler.SelectedIndex = selectedIndex;
         }
     }
 }

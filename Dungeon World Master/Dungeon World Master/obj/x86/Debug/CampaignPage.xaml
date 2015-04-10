@@ -11,14 +11,14 @@
 
     <Page.Resources>
         <CollectionViewSource x:Name="characters" Source="{Binding SelectedCampaign.Characters}" />
-
-
+        <CollectionViewSource x:Name="fronts" Source="{Binding SelectedCampaign.Fronts}" />
     </Page.Resources>
 
     <Page.BottomAppBar>
         <CommandBar>
             <CommandBar.SecondaryCommands>
-                <AppBarButton x:ConnectionId='1' Label="Add" Icon="Add"                           />
+                <AppBarButton x:ConnectionId='1' Label="Add Character" Icon="Add"                           />
+                <AppBarButton x:ConnectionId='2' Label="Add Front" Icon="Add"                       />
             </CommandBar.SecondaryCommands>
         </CommandBar>
     </Page.BottomAppBar>
@@ -68,7 +68,7 @@
                     <RowDefinition Height="20*" />
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" HorizontalAlignment="Center" Text="Characters" Style="{StaticResource SubheaderTextBlockStyle}" />
-                <GridView x:ConnectionId='2'
+                <GridView x:ConnectionId='8'
                      x:Name="character_grid"
                      AutomationProperties.AutomationId="ItemsGridView"
                      AutomationProperties.Name="Items"
@@ -94,12 +94,85 @@
                         </DataTemplate>
                     </GridView.ItemTemplate>
                 </GridView>
-                
+
                 <Button Grid.Row="1" Content="Maps" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="18" Margin="4" />
             </Grid>
-            
+
             <Grid Grid.Column="1">
-                
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Button x:ConnectionId='6' Grid.Column="0" Content="Add"                           HorizontalAlignment="Stretch" />
+                        <Button x:ConnectionId='7' Grid.Column="1" Content="Remove"                              HorizontalAlignment="Stretch" />
+                    </Grid>
+                    <ListBox x:ConnectionId='5' x:Name="NotesHandler" Grid.Row="1" ItemsSource="{Binding SelectedCampaign.Notes}"                                            >
+                        <DataTemplate>
+                            <ItemsControl>
+                                <TextBlock Text="{Binding Title}" />
+                            </ItemsControl>
+                        </DataTemplate>
+                    </ListBox>
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="80*" />
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <TextBlock Text="Fronts" Style="{StaticResource SubheaderTextBlockStyle}" HorizontalAlignment="Center" />
+                        <GridView x:ConnectionId='4'
+                            x:Name="front_grid"
+                            AutomationProperties.AutomationId="ItemsGridView"
+                            AutomationProperties.Name="Items"
+                            ItemsSource="{Binding Source={StaticResource fronts}}"
+                            SelectionMode="None"
+                            IsSwipeEnabled="false"
+                            IsItemClickEnabled="True"
+                                                            
+                            Grid.Row="0"
+                            Margin="0,50,0,0">
+                            <GridView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid HorizontalAlignment="Left" Width="200" Height="200">
+                                        <Border Background="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}">
+                                            <Image Source="{Binding ImagePath}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Title}"/>
+                                        </Border>
+                                        <StackPanel VerticalAlignment="Bottom" Background="{ThemeResource ListViewItemOverlayBackgroundThemeBrush}">
+                                            <TextBlock Text="{Binding Name}" Foreground="{ThemeResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" Height="60" Margin="15,0,15,0" FontWeight="SemiBold"/>
+                                            <TextBlock Text="{Binding PlayerName}" Foreground="{ThemeResource ListViewItemOverlaySecondaryForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" TextWrapping="NoWrap" Margin="15,0,15,10" FontSize="12"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </DataTemplate>
+                            </GridView.ItemTemplate>
+                        </GridView>
+                    </Grid>
+                </Grid>
+            </Grid>
+            
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBox x:ConnectionId='3' Grid.Row="0" FontSize="22" Text="{Binding SelectedNote.Title, Mode=TwoWay}"                               Margin="5" HorizontalAlignment="Stretch" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Foreground="White" />
+                <TextBox Grid.Row="1" Style="{StaticResource MultilineTextBoxStyle}" Text="{Binding SelectedNote.Body, Mode=TwoWay}" Margin="5" />
             </Grid>
         </Grid>
     </Grid>

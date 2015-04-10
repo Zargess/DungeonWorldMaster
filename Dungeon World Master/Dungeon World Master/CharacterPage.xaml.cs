@@ -88,11 +88,13 @@ namespace Dungeon_World_Master
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            App.ViewModel.SelectedNote = null;
             navigationHelper.OnNavigatedTo(e);
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
+            App.ViewModel.SelectedNote = null;
             navigationHelper.OnNavigatedFrom(e);
         }
 

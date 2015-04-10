@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>ZARGESS-STATION</Machine>
-    <WindowsUser>MFH</WindowsUser>
+    <Machine>ZARGESS-UNIT</Machine>
+    <WindowsUser>Marcus</WindowsUser>
     <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
     <SolutionConfiguration>Debug|x86</SolutionConfiguration>
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>f40fccc8-0486-44db-9bfd-efedb5ebada5</PackageIdentityName>
-    <IntermediateOutputPath>D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\</IntermediateOutputPath>
     <RegisteredManifestChecksum>E8123F909B1735E9A50BCA116007CFB8083772E503635C422DAD782E3EAA669F</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>f40fccc8-0486-44db-9bfd-efedb5ebada5_1.0.0.0_x86__3mybz78na6kqt</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>f40fccc8-0486-44db-9bfd-efedb5ebada5_3mybz78na6kqt!App</RegisteredUserModeAppID>
@@ -17,68 +17,76 @@
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-06T17:19:42.788</Modified>
+      <Modified>2015-04-10T11:57:03.379</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\Dungeon World Master.exe">
+    <AppxPackagedFile Include="C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\Dungeon World Master.exe">
       <PackagePath>Dungeon World Master.exe</PackagePath>
-      <Modified>2015-04-06T17:18:51.987</Modified>
+      <Modified>2015-04-10T12:23:14.022</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\Assets\Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\packages\Newtonsoft.Json.6.0.8\lib\netcore45\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+      <Modified>2015-04-10T11:52:06.822</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-03-11T08:49:11.808</Modified>
+      <Modified>2015-03-31T19:29:09.116</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\Assets\SmallLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\Assets\SmallLogo.scale-100.png">
       <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-03-11T08:49:11.810</Modified>
+      <Modified>2015-03-31T19:29:09.117</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\Assets\SplashScreen.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-03-11T08:49:11.817</Modified>
+      <Modified>2015-03-31T19:29:09.118</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-03-11T08:49:11.819</Modified>
+      <Modified>2015-03-31T19:29:09.119</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2015-04-06T17:10:26.243</Modified>
+      <Modified>2015-04-01T13:58:43.662</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\CampaignPage.xbf">
+    <AppxPackagedFile Include="C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\CampaignPage.xbf">
       <PackagePath>CampaignPage.xbf</PackagePath>
-      <Modified>2015-04-06T17:19:42.582</Modified>
+      <Modified>2015-04-10T11:57:02.011</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\CharacterPage.xbf">
+    <AppxPackagedFile Include="C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\CharacterPage.xbf">
       <PackagePath>CharacterPage.xbf</PackagePath>
-      <Modified>2015-04-06T17:19:42.584</Modified>
+      <Modified>2015-04-05T12:27:02.189</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\CustomControls\HexagonGrid.xbf">
+    <AppxPackagedFile Include="C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\CustomControls\HexagonGrid.xbf">
       <PackagePath>CustomControls\HexagonGrid.xbf</PackagePath>
-      <Modified>2015-04-06T17:10:26.248</Modified>
+      <Modified>2015-04-01T13:58:43.662</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\CustomControls\StatsTable.xbf">
+    <AppxPackagedFile Include="C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\CustomControls\StatsTable.xbf">
       <PackagePath>CustomControls\StatsTable.xbf</PackagePath>
-      <Modified>2015-04-06T17:10:26.250</Modified>
+      <Modified>2015-04-02T09:48:50.272</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\FrontPage.xbf">
+      <PackagePath>FrontPage.xbf</PackagePath>
+      <Modified>2015-04-10T11:57:02.019</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2015-04-06T17:10:26.252</Modified>
+      <Modified>2015-04-03T16:32:19.240</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\Dungeon World Master.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\Dungeon World Master.xr.xml">
       <PackagePath>Dungeon World Master.xr.xml</PackagePath>
-      <Modified>2015-04-06T17:19:42.518</Modified>
+      <Modified>2015-04-10T11:30:28.066</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-04-06T17:19:42.680</Modified>
+      <Modified>2015-04-10T11:57:03.217</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

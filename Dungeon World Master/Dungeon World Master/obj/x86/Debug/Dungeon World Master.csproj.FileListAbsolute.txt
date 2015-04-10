@@ -102,3 +102,12 @@ D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\D
 D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\CampaignPage.xbf
 D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\CharacterPage.xbf
 D:\Github\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\CustomControls\StatsTable.xbf
+C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\FrontPage.xbf
+C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\FrontPage.g.i.cs
+C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\FrontPage.g.cs
+C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\FrontPage.xaml
+C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\FrontPage.xbf
+C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\Newtonsoft.Json.dll
+C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\Newtonsoft.Json.xml
+C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\Dungeon World Master.csprojResolveAssemblyReference.cache
+C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\Dungeon World Master.csproj.GenerateResource.Cache
