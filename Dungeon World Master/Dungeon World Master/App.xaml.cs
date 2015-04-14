@@ -3,6 +3,7 @@ using Dungeon_World_Master.ViewModels;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -29,20 +30,6 @@ namespace Dungeon_World_Master
     /// </summary>
     public partial class App : Application
     {
-        //private static ViewModel _viewmodel;
-        //public static ViewModel ViewModel
-        //{
-        //    get
-        //    {
-        //        if (_viewmodel == null) _viewmodel = new ViewModel();
-        //        return _viewmodel;
-        //    }
-        //    private set
-        //    {
-        //        _viewmodel = value;
-        //    }
-        //}
-
         public static ViewModel ViewModel { get; private set; }
 
         /// <summary>
@@ -154,7 +141,6 @@ namespace Dungeon_World_Master
 
         private async Task SaveAsync()
         {
-            // await StorageManager.SaveAsync();
             var folder = ApplicationData.Current.RoamingFolder;
             var file = await folder.CreateFileAsync("Data.json", CreationCollisionOption.ReplaceExisting);
             var data = await JsonConvert.SerializeObjectAsync(ViewModel, Formatting.Indented);

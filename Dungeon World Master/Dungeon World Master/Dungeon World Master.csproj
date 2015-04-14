@@ -161,8 +161,9 @@
     <Compile Include="Models\Alignment.cs" />
     <Compile Include="Models\Campaign.cs" />
     <Compile Include="Models\Character.cs" />
+    <Compile Include="Models\Danger.cs" />
     <Compile Include="Models\Dice.cs" />
-    <Compile Include="Models\Front.cs" />
+    <Compile Include="Utility\Front.cs" />
     <Compile Include="Models\Note.cs" />
     <Compile Include="Models\Quest.cs" />
     <Compile Include="Models\Stat.cs" />

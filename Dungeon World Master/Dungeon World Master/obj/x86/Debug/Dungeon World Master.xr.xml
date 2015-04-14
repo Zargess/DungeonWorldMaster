@@ -7,10 +7,10 @@
     <RootPropertyPathName Name="SelectedNote" />
     <RootPropertyPathName Name="Body" />
     <RootPropertyPathName Name="Title" />
-    <RootPropertyPathName Name="PlayerName" />
     <RootPropertyPathName Name="Name" />
     <RootPropertyPathName Name="ImagePath" />
     <RootPropertyPathName Name="Notes" />
+    <RootPropertyPathName Name="PlayerName" />
     <RootPropertyPathName Name="NavigationHelper" />
     <RootPropertyPathName Name="GoBackCommand" />
     <RootPropertyPathName Name="SelectedCharacter" />
@@ -22,7 +22,7 @@
     <RootPropertyPathName Name="Stats" />
     <RootPropertyPathName Name="Modifier" />
     <RootPropertyPathName Name="Score" />
-    <RootPropertyPathName Name="DefaultViewModel" />
+    <RootPropertyPathName Name="SelectedFront" />
     <RootPropertyPathName Name="Campaigns" />
     <RootPropertyPathName Name="Subtitle" />
   </Roots.PropertyPathNames>
@@ -75,7 +75,6 @@
       <RootProperty Name="Resources" />
       <RootProperty Name="BottomAppBar" />
       <RootProperty Name="Content" />
-      <RootProperty Name="DataContext" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.CollectionViewSource">
       <RootProperty Name="Source" />
@@ -84,7 +83,6 @@
       <RootProperty Name="Mode" />
       <RootProperty Name="Source" />
       <RootProperty Name="ElementName" />
-      <RootProperty Name="RelativeSource" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.CommandBar">
       <RootProperty Name="SecondaryCommands" />
@@ -227,7 +225,6 @@
       <RootEvent Name="PointerEntered" />
     </RootType>
     <RootType FullName="Dungeon_World_Master.CustomControls.HexagonGrid" />
-    <RootType FullName="Windows.UI.Xaml.Data.RelativeSource" />
     <RootType FullName="Dungeon_World_Master.FrontPage" />
     <RootType FullName="Dungeon_World_Master.MainPage" />
   </Roots.RootTypes>
