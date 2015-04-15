@@ -21,6 +21,15 @@ namespace Dungeon_World_Master
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
+    /// 
+
+    public class Person
+    {
+        public string Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+    }
+
     public sealed partial class FrontPage : Page
     {
 
@@ -35,6 +44,7 @@ namespace Dungeon_World_Master
             get { return this.navigationHelper; }
         }
 
+        public List<Person> People { get; private set; }
 
         public FrontPage()
         {
@@ -42,7 +52,24 @@ namespace Dungeon_World_Master
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
-            this.DataContext = App.ViewModel;
+
+            People = new List<Person>
+            {
+                new Person
+                {
+                    Id = "Ild",
+                    FirstName = "Humus",
+                    LastName = "Furion"
+                },
+                new Person
+                {
+                    Id = "Flamme",
+                    FirstName = "Costa",
+                    LastName = "Rica"
+                }
+            };
+
+            this.DataContext = this;
         }
 
         /// <summary>

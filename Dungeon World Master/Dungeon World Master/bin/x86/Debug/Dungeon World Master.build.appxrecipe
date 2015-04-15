@@ -47,6 +47,12 @@
     <AppxPackagedFile Include="C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\CharacterPage.xbf">
       <PackagePath>CharacterPage.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\CustomControls\DangerInfoBox.xbf">
+      <PackagePath>CustomControls\DangerInfoBox.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\CustomControls\GrimPortentsList.xbf">
+      <PackagePath>CustomControls\GrimPortentsList.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\CustomControls\HexagonGrid.xbf">
       <PackagePath>CustomControls\HexagonGrid.xbf</PackagePath>
     </AppxPackagedFile>

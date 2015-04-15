@@ -7,6 +7,20 @@ namespace Dungeon_World_Master.Models
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
+        private string _cast;
+        public string Cast
+        {
+            get
+            {
+                return _cast;
+            }
+            set
+            {
+                _cast = value;
+                RaisePropertyChanged("Cast");
+            }
+        }
+
         private string _doom;
         public string Doom
         {
@@ -21,31 +35,17 @@ namespace Dungeon_World_Master.Models
             }
         }
 
-        private string _moves;
-        public string Moves
+        private string _impulse;
+        public string Impulse
         {
             get
             {
-                return _moves;
+                return _impulse;
             }
             set
             {
-                _moves = value;
-                RaisePropertyChanged("Moves");
-            }
-        }
-
-        private ObservableCollection<Note> _notes;
-        public ObservableCollection<Note> Notes
-        {
-            get
-            {
-                return _notes;
-            }
-            set
-            {
-                _notes = value;
-                RaisePropertyChanged("Notes");
+                _impulse = value;
+                RaisePropertyChanged("Impulse");
             }
         }
 
@@ -93,9 +93,9 @@ namespace Dungeon_World_Master.Models
 
         public Danger()
         {
+            Cast = "Insert cast";
             Doom = "Insert a type of doom";
-            Moves = "Write the available GM moves down";
-            Notes = new ObservableCollection<Note>();
+            Impulse = "Insert impulse";
             Stakes = "Write some stakes";
             Title = "Insert a title";
             TypeOfDanger = "Write a type of danger";

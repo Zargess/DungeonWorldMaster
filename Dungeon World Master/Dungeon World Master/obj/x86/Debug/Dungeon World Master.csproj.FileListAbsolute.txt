@@ -111,3 +111,13 @@ C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon
 C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\Newtonsoft.Json.xml
 C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\Dungeon World Master.csprojResolveAssemblyReference.cache
 C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\Dungeon World Master.csproj.GenerateResource.Cache
+C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\CustomControls\DangerInfoBox.g.i.cs
+C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\CustomControls\DangerInfoBox.g.cs
+C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\CustomControls\GrimPortentsList.g.i.cs
+C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\CustomControls\GrimPortentsList.g.cs
+C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\CustomControls\DangerInfoBox.xaml
+C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\CustomControls\GrimPortentsList.xaml
+C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\CustomControls\DangerInfoBox.xbf
+C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\obj\x86\Debug\CustomControls\GrimPortentsList.xbf
+C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\CustomControls\DangerInfoBox.xbf
+C:\Users\Marcus\Documents\GitHub\DungeonWorldMaster\Dungeon World Master\Dungeon World Master\bin\x86\Debug\CustomControls\GrimPortentsList.xbf

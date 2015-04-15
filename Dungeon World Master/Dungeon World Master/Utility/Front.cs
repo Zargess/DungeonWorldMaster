@@ -26,17 +26,45 @@ namespace Dungeon_World_Master.Models
             }
         }
 
-        private ObservableCollection<Danger> _dangers;
-        public ObservableCollection<Danger> Dangers
+        private Danger _danger1;
+        public Danger Danger1
         {
             get
             {
-                return _dangers;
+                return _danger1;
             }
             set
             {
-                _dangers = value;
-                RaisePropertyChanged("Dangers");
+                _danger1 = value;
+                RaisePropertyChanged("Danger1");
+            }
+        }
+
+        private Danger _danger2;
+        public Danger Danger2
+        {
+            get
+            {
+                return _danger2;
+            }
+            set
+            {
+                _danger2 = value;
+                RaisePropertyChanged("Danger2");
+            }
+        }
+
+        private Danger _danger3;
+        public Danger Danger3
+        {
+            get
+            {
+                return _danger3;
+            }
+            set
+            {
+                _danger3 = value;
+                RaisePropertyChanged("Danger3");
             }
         }
 
@@ -54,8 +82,8 @@ namespace Dungeon_World_Master.Models
             }
         }
 
-        private string _grimportents;
-        public string GrimPotents
+        private ObservableCollection<string> _grimportents;
+        public ObservableCollection<string> GrimPotents
         {
             get
             {
@@ -71,9 +99,11 @@ namespace Dungeon_World_Master.Models
         public Front()
         {
             Name = "Insert name";
-            Dangers = new ObservableCollection<Danger>();
+            Danger1 = new Danger();
+            Danger2 = new Danger();
+            Danger3 = new Danger();
             Description = "Write a description for your front";
-            GrimPotents = "Write some grim potents that might come to pass";
+            GrimPotents = new ObservableCollection<string>();
         }
 
         private void RaisePropertyChanged(string name)

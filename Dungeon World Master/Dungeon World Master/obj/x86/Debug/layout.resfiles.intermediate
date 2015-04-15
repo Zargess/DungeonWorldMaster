@@ -5,6 +5,8 @@ Assets\StoreLogo.scale-100.png
 App.xbf
 CampaignPage.xbf
 CharacterPage.xbf
+CustomControls\DangerInfoBox.xbf
+CustomControls\GrimPortentsList.xbf
 CustomControls\HexagonGrid.xbf
 CustomControls\StatsTable.xbf
 Dungeon World Master.xr.xml

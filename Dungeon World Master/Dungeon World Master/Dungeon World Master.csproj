@@ -111,6 +111,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="CustomControls\DangerInfoBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\GrimPortentsList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CustomControls\HexagonGrid.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -142,6 +150,12 @@
     <Compile Include="Common\ObservableDictionary.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="CustomControls\DangerInfoBox.xaml.cs">
+      <DependentUpon>DangerInfoBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\GrimPortentsList.xaml.cs">
+      <DependentUpon>GrimPortentsList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\HexagonGrid.xaml.cs">
       <DependentUpon>HexagonGrid.xaml</DependentUpon>
     </Compile>
