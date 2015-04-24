@@ -22,10 +22,6 @@
     <RootPropertyPathName Name="Stats" />
     <RootPropertyPathName Name="Modifier" />
     <RootPropertyPathName Name="Score" />
-    <RootPropertyPathName Name="People" />
-    <RootPropertyPathName Name="FirstName" />
-    <RootPropertyPathName Name="LastName" />
-    <RootPropertyPathName Name="Id" />
     <RootPropertyPathName Name="SelectedFront" />
     <RootPropertyPathName Name="Campaigns" />
     <RootPropertyPathName Name="Subtitle" />
@@ -231,11 +227,6 @@
       <RootEvent Name="PointerEntered" />
     </RootType>
     <RootType FullName="Dungeon_World_Master.CustomControls.HexagonGrid" />
-    <RootType FullName="Windows.UI.Xaml.Controls.ListView">
-      <RootProperty Name="SelectionMode" />
-      <RootProperty Name="ItemsSource" />
-      <RootProperty Name="ItemTemplate" />
-    </RootType>
     <RootType FullName="Dungeon_World_Master.FrontPage" />
     <RootType FullName="Dungeon_World_Master.MainPage" />
   </Roots.RootTypes>

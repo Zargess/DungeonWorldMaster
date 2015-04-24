@@ -40,33 +40,18 @@
                         AutomationProperties.Name="Back"
                         AutomationProperties.AutomationId="BackButton"
                         AutomationProperties.ItemType="Navigation Button"/>
-            <TextBlock x:Name="pageTitle" Text="{Binding SelectedFront.Name}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
-                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
+            <TextBox x:Name="pageTitle" Text="{Binding SelectedFront.Name, Mode=TwoWay}" IsReadOnly="False" TextAlignment="Center" FontSize="36" Grid.Column="1" 
+                        IsHitTestVisible="True" Width="800" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
         
         <Grid Grid.Row="1">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                </Grid.RowDefinitions>
-                <ListView x:Name="listView" SelectionMode="Multiple" ItemsSource="{Binding People}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <Grid Width="700">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-                                <TextBox Text="{Binding Id, Mode=OneWay}" Grid.Column="0"/>
-                                <TextBox Text="{Binding LastName, Mode=OneWay}" Grid.Column="1" Margin="5,0,0,0"/>
-                                <TextBox Text="{Binding FirstName, Mode=OneWay}" Grid.Column="2" Margin="5,0,0,0"/>
-                            </Grid>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-                <Button Grid.Row="1" Content="Add"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70*" />
+                <ColumnDefinition Width="30*" />
+            </Grid.ColumnDefinitions>
+            
+            <Grid Grid.Column="0">
+                
             </Grid>
         </Grid>
     </Grid>

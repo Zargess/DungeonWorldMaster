@@ -53,23 +53,7 @@ namespace Dungeon_World_Master
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
 
-            People = new List<Person>
-            {
-                new Person
-                {
-                    Id = "Ild",
-                    FirstName = "Humus",
-                    LastName = "Furion"
-                },
-                new Person
-                {
-                    Id = "Flamme",
-                    FirstName = "Costa",
-                    LastName = "Rica"
-                }
-            };
-
-            this.DataContext = this;
+            this.DataContext = App.ViewModel;
         }
 
         /// <summary>
