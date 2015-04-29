@@ -1,0 +1,1 @@
+Move alot of the GUI functions to commands and make a shared object which contains all the commands
